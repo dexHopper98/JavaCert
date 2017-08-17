@@ -3,9 +3,10 @@ package com.java.cert.chapter13.bank;
 import java.util.Date;
 
 /****************************************************************************
- * Title: BackgroundDVO.java <p/>
+ * Title: CreditHistoryVO.java <p/>
  * Project: JavaCert <p/>
- * Description: <p/>
+ * Description: Data container for storing background information related to 
+ * credit, accounts opened, etc.<p/>
  * Copyright: Copyright (c) 2017<p/>
  * Company: Silicon Mountain Technologies<p/>
  * @author Devon Franklin
@@ -13,7 +14,7 @@ import java.util.Date;
  * @since Aug 8, 2017
  ****************************************************************************/
 
-public class BackgroundDataVO {
+public class CreditHistoryVO {
 	//member variables
 	private int creditScore;
 	private long debtAmount;
@@ -27,7 +28,7 @@ public class BackgroundDataVO {
 	 * @param opentAccountsTotal
 	 * @param yearsAtCurrentAddress
 	 */
-	public BackgroundDataVO(int creditScore, long debtAmount, int opentAccountsTotal, Date yearsAtCurrentAddress){
+	public CreditHistoryVO(int creditScore, long debtAmount, int opentAccountsTotal, Date yearsAtCurrentAddress){
 		this.creditScore = creditScore;
 		this.debtAmount = debtAmount;
 		this.openAccountsTotal = opentAccountsTotal;

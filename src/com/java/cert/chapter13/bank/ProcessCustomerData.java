@@ -1,8 +1,11 @@
 package com.java.cert.chapter13.bank;
+
+import java.util.Date;
+
 /****************************************************************************
  * Title: ProcessCustomerData.java <p/>
  * Project: JavaCert <p/>
- * Description: <p/>
+ * Description: Handles processing of customer data to determine bank account eligibility<p/>
  * Copyright: Copyright (c) 2017<p/>
  * Company: Silicon Mountain Technologies<p/>
  * @author Devon Franklin
@@ -55,7 +58,7 @@ public class ProcessCustomerData implements Runnable {
 				customer.setProcessStatus(ProcessStatus.FAILED);
 			}
 			
-			//notify the any waiting threads
+			//notify any waiting threads
 			customer.notifyAll();
 		}
 
@@ -63,6 +66,13 @@ public class ProcessCustomerData implements Runnable {
 	
 	protected void validateCustomerHistory(){
 		
+		//check credit score
+
+		//check any outstanding debts
+		
+		//check number of open accounts
+		
+		//check years at previous address
 	}
 	
 

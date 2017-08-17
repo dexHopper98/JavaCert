@@ -22,18 +22,18 @@ public class Customer {
 	private boolean isReferred;
 	private Map<String, Account> accounts;
 	private ProcessStatus processStatus; //used to specify the status of customers' history check
-	private BackgroundDataVO backgroundVO;
+	private CreditHistoryVO creditHistoryVO;
 	
 	/**
 	 * Constructor for initialization
 	 * @param name
 	 * @param isReferred
-	 * @param backgroundVO
+	 * @param creditHistoryVO
 	 */
-	public Customer(String name, boolean isReferred, BackgroundDataVO backgroundVO){
+	public Customer(String name, boolean isReferred, CreditHistoryVO creditHistoryVO){
 		this.name = name;
 		this.isReferred = isReferred;
-		this.setBackgroundVO(backgroundVO);
+		this.setCreditHistoryVO(creditHistoryVO);
 	}
 
 	/**
@@ -107,17 +107,17 @@ public class Customer {
 	}
 
 	/**
-	 * @return the backgroundVO
+	 * @return the creditHistoryVO
 	 */
-	public BackgroundDataVO getBackgroundVO() {
-		return backgroundVO;
+	public CreditHistoryVO getCreditHistoryVO() {
+		return creditHistoryVO;
 	}
 
 	/**
-	 * @param backgroundVO the backgroundVO to set
+	 * @param creditHistoryVO the creditHistoryVO to set
 	 */
-	public void setBackgroundVO(BackgroundDataVO backgroundVO) {
-		this.backgroundVO = backgroundVO;
+	public void setCreditHistoryVO(CreditHistoryVO creditHistoryVO) {
+		this.creditHistoryVO = creditHistoryVO;
 	}
 	
 }
