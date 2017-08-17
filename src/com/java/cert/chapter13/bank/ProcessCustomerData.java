@@ -1,7 +1,5 @@
 package com.java.cert.chapter13.bank;
 
-import java.util.Date;
-
 /****************************************************************************
  * Title: ProcessCustomerData.java <p/>
  * Project: JavaCert <p/>
@@ -64,17 +62,34 @@ public class ProcessCustomerData implements Runnable {
 
 	}
 	
+	/**
+	 * validates different criteria from a customers credit history and reports "red flags"
+	 */
 	protected void validateCustomerHistory(){
+		CreditHistoryVO credHistory = customer.getCreditHistoryVO();
+		
+		if(credHistory == null){//cannot process without credit history
+			String errorMssg = "Credit history data not set for customer: " +  customer.getCustomerId();
+			throw new NullPointerException(errorMssg);
+		}
 		
 		//check credit score
-
+		if(credHistory.getCreditScore() <= 550)
+			redFlags++;
+		
 		//check any outstanding debts
+		if(credHistory.getDebtAmount() > 5000)
+			redFlags++;
 		
 		//check number of open accounts
+		if(credHistory.getOpenAccountsTotal() > 4)
+			redFlags++;
 		
 		//check years at previous address
+		if(credHistory.getYearsAtCurrentAddress() < 2)
+			redFlags++;
+		
 	}
-	
 
 	/**
 	 * @return the customer

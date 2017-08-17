@@ -1,6 +1,5 @@
 package com.java.cert.chapter13.bank;
 
-import java.util.Date;
 
 /****************************************************************************
  * Title: CreditHistoryVO.java <p/>
@@ -19,7 +18,7 @@ public class CreditHistoryVO {
 	private int creditScore;
 	private long debtAmount;
 	private int openAccountsTotal;
-	private Date yearsAtCurrentAddress;
+	private int yearsAtCurrentAddress;
 	
 	/**
 	 * Constructor to initialize class
@@ -28,7 +27,7 @@ public class CreditHistoryVO {
 	 * @param opentAccountsTotal
 	 * @param yearsAtCurrentAddress
 	 */
-	public CreditHistoryVO(int creditScore, long debtAmount, int opentAccountsTotal, Date yearsAtCurrentAddress){
+	public CreditHistoryVO(int creditScore, long debtAmount, int opentAccountsTotal, int yearsAtCurrentAddress){
 		this.creditScore = creditScore;
 		this.debtAmount = debtAmount;
 		this.openAccountsTotal = opentAccountsTotal;
@@ -74,13 +73,13 @@ public class CreditHistoryVO {
 	/**
 	 * @return the yearsAtCurrentAddress
 	 */
-	public Date getYearsAtCurrentAddress() {
+	public int getYearsAtCurrentAddress() {
 		return yearsAtCurrentAddress;
 	}
 	/**
 	 * @param yearsAtCurrentAddress the yearsAtCurrentAddress to set
 	 */
-	public void setYearsAtCurrentAddress(Date yearsAtCurrentAddress) {
+	public void setYearsAtCurrentAddress(int yearsAtCurrentAddress) {
 		this.yearsAtCurrentAddress = yearsAtCurrentAddress;
 	}
 }
