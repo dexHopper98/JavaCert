@@ -25,6 +25,16 @@ public class Customer {
 	private CreditHistoryVO creditHistoryVO;
 	
 	/**
+	 * Constructor to initialization
+	 * @param name
+	 * @param isReferred
+	 */
+	public Customer(String name, boolean isReferred){
+		this.name = name;
+		this.isReferred = isReferred;
+	}
+	
+	/**
 	 * Constructor for initialization
 	 * @param name
 	 * @param isReferred

@@ -1,4 +1,7 @@
 package com.java.cert.chapter13.bank;
+
+import java.util.List;
+
 /****************************************************************************
  * Title: Bank.java <p/>
  * Project: JavaCert <p/>
@@ -12,18 +15,23 @@ package com.java.cert.chapter13.bank;
  ****************************************************************************/
 
 public class Bank {
+	private List<Customer> customers;
 	
 	///enum for different possible account types
 	public enum AccountType{
 		CHECKING, SAVINGS, PERSONAL, LOAN;
 	}
 	
+	public Bank(){
+		//no arg-constructor for simple initialization
+	}
+	
+	public Bank(List<Customer> customers){
+		this.customers = customers;
+	}
+	
 	public void run(){
-		//generate the background information for each customer
 		
-		//gather our customers to process
-//		Customer c1 = new Customer("Samuel", 720, true);
-//		Customer c2 = new Customer("Alicia", 560, false);
 		
 		//create our two task instances
 		
