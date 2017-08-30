@@ -1,0 +1,3 @@
+firstName=Randy,lastName=Anderson,age=40,accounts=0
+firstName=Susan,lastName=Anderson,age=39,accounts=1
+firstName=Phillip,lastName=Garrison,age=29,accounts=5

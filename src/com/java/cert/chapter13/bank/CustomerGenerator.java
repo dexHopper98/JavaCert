@@ -1,5 +1,11 @@
 package com.java.cert.chapter13.bank;
 
+//java IO 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+//jdk 1.8
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +22,15 @@ import java.util.List;
 
 public class CustomerGenerator {
 	private List<Customer> customers;
-	private List<CreditHistoryVO> creditHistories;
+	private String fileLoc;
 	
-	public CustomerGenerator(){
-		populateCustomerList();
+	/**
+	 * Constructor initializes with a file location
+	 * @param fileLoc
+	 */
+	public CustomerGenerator(String fileLoc){
+		customers = new ArrayList<>();
+		this.fileLoc = fileLoc;
 	}
 	
 	/**
@@ -27,35 +38,40 @@ public class CustomerGenerator {
 	 * @param numberToGenerate - number of customers to add to listing
 	 * @return
 	 */
-	public  List<Customer> generateCustomers(int numberToGenerate){
+	public  List<Customer> generateCustomers(){		
+		//read through each line
+		readFile();
 		
-		for (int i = 0; i < numberToGenerate; i++) {
-			//randomly choose a customer from our list until we hit our quota
-			//some customers may be chosen multiple times
-		}
+		//generate a new customer object based on each line
+		
+		//add to a corresponding credit history object
+		
+		//add to collection
 		
 		return customers;
 	}
 	
-	/**
-	 * Fills the list of customer with a defined number of customers
-	 */
-	protected void populateCustomerList(){
-		//give each customer a random credit history 
-		
-		//generate some customers for our available customer base
-		Customer c1 = new Customer("Sam", true);
-		Customer c2 = new Customer("Rachael", false);
-		Customer c3 = new Customer("Rachael", false); 
-		Customer c4 = new Customer("Rachael", false);
-		
-		//populate
+	protected void readFile(){
+		try(BufferedReader br = new BufferedReader(new FileReader(fileLoc))) {
+		    StringBuilder sb = new StringBuilder();
+		    String line = br.readLine();
+
+		    while (line != null) {
+		        sb.append(line);
+		        sb.append(System.lineSeparator());
+		        line = br.readLine();
+		    }
+		    String everything = sb.toString();
+		    System.out.println(everything);
+		}catch(IOException e){
+			System.err.println("Error attempting to read file: " + fileLoc);
+		}
 	}
 	
-	
-	protected void generateCreditHistory(Customer customer){
-		//generate sample credit history information
-		
-		//set it to the passed customer
+	public static void main(String...args){
+		String file = "input/bankApp/bankCustomers.txt";
+		CustomerGenerator cg = new CustomerGenerator(file);
+		cg.generateCustomers();
 	}
+	
 }
